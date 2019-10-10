@@ -89,6 +89,15 @@ byte h[8] = { B01000010,
               B01000010,
               B01000010
             };
+byte x[8] = { B01000010,
+              B01000010,
+              B00100100,
+              B00011000,
+              B00100100,
+              B01000010,
+              B01000010,
+              B01000010
+            };
 
 typedef struct {
   byte num;
@@ -243,23 +252,23 @@ void parse_serial_input() {
           lmd.display();
         }
         else { // wrong led value
-          drawSprite( (byte*)&e, 0, 0, 8, 8);
-          lmd.display();
+          //drawSprite( (byte*)&e, 0, 0, 8, 8);
+          //lmd.display();
           ask_again = true;
         }
       } else { // wrong answer
-        drawSprite( (byte*)&f, 0, 0, 8, 8);
-        lmd.display();
+        //drawSprite( (byte*)&f, 0, 0, 8, 8);
+        //lmd.display();
         ask_again = true;
       }
     } else { // wrong checksum
-      drawSprite( (byte*)&g, 0, 0, 8, 8);
-      lmd.display();
+      //drawSprite( (byte*)&g, 0, 0, 8, 8);
+      //lmd.display();
       ask_again = true;
     }
   } else { // wrong frame
-    drawSprite( (byte*)&h, 0, 0, 8, 8);
-    lmd.display();
+    //drawSprite( (byte*)&h, 0, 0, 8, 8);
+    //lmd.display();
     ask_again = true;
   }
 }
